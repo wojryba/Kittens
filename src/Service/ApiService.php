@@ -24,7 +24,8 @@ final class ApiService
         return json_decode($body);
     }
 
-    public function getSomeKittens(int $amount = 10): array {
+    public function getSomeKittens(int $amount): array {
+        $amount = $amount - 1;
         $kittens = [];
         for ($i = 0; $i <= $amount; $i++) {
             $kitten = $this->getKitten();

@@ -39,7 +39,7 @@ class KittensMain extends FOSRestController
      *     )
      * @return Response
      */
-    public function Test($amount) {
+    public function getKittens($amount) {
         // Check if parameter is an integer, if not throw Exception
         if(!$this->isInteger($amount)) {
             throw new BadRequestHttpException("Given parameter was not correct. Suplay an int that is bigger then 0");

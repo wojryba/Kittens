@@ -1,16 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wojry
- * Date: 13.11.2018
- * Time: 20:33
- */
 
 namespace App\Service;
 
-
 final class ApiService
 {
+    /**
+     * @var \GuzzleHttp\Client
+     */
     private $httpClient;
 
     public function __construct()
@@ -18,7 +14,7 @@ final class ApiService
         $this->httpClient = new \GuzzleHttp\Client();
     }
 
-    public function getKitten() {
+    public function getKitten(): \stdClass  {
         $apiRes = $this->httpClient->request('GET', 'https://aws.random.cat/meow');
         $body = $apiRes->getBody();
         return json_decode($body);

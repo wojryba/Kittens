@@ -21,7 +21,7 @@ final class ApiService
     }
 
     public function getSomeKittens(int $amount): array {
-        $amount = $amount - 1;
+        --$amount;
         $kittens = [];
         for ($i = 0; $i <= $amount; $i++) {
             $kitten = $this->getKitten();
